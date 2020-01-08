@@ -323,8 +323,7 @@ private extension MenuInteractiveTransition {
                     cancelTransition(currentPercentComplete: progress)
                     transitionContext.cancelInteractiveTransition()
                 }
-
-            } else if transitionStarted {
+            } else if transitionShouldStarted {
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
                     guard let transitionContext = self.transitionContext else {
                         fatalError("Invalid `transitionContext` value. This property should not be nil")
